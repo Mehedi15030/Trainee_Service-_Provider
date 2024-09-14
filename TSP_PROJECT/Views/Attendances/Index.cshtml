@@ -1,0 +1,72 @@
+﻿@model IEnumerable<TSP_PROJECT.Models.Batch>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="alert alert-primary">Attendance</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        @* <p>
+            <a asp-action="Create" class="btn btn-primary btn-sm">Create New</a>
+        </p> *@
+    </div>
+    <div class="col-md-8">
+        <form asp-controller="Attendances" asp-action="AttendanceSheet" method="get">
+            <div class="input-group">
+                <span class="input-group-text"> Course Batch </span>
+                <select class="form-control" name="batchid" >
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <option value="@item.Id">@item.BatchName</option>
+                        }
+                    }
+                </select>
+                <button type="submit" class="btn btn-primary btn-sm"> Show Class Schedule</button>
+            </div>
+            @* <a asp-action="CreateAttendanceSheet" class="btn btn-primary btn-sm">Create Attendance Sheet</a> *@
+        </form>
+    </div>
+</div>
+
+@* 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPresent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPresent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Schedule.ScheduleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.MobileNo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@

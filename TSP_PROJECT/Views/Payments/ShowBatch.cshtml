@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TSP_PROJECT.Models.Batch>
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Batches </h2>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BatchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BatchShortName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trainer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseCoordinator)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BatchName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BatchShortName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.CourseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Trainer.Expertise)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseCoordinator.Email)
+                </td>
+                <td>
+                    <a asp-action="ShowStudents" asp-route-id="@item.Id">Show Student List</a> 
+ 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

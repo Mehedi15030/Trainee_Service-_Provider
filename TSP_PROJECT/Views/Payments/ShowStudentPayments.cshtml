@@ -1,0 +1,80 @@
+﻿@model IEnumerable<TSP_PROJECT.Models.Payment>
+
+@{
+    ViewData["Title"] = "Create";
+    int i = 1;
+    double course_fee = ViewBag.coursefee;
+    double sub_total = 0.0;
+}
+
+<h2>Student List </h2>
+<div class="row">
+    <div class="col-md-6">
+         
+
+    </div>
+</div>
+
+
+<table class="table table-stripped" id="emptable">
+    <thead>
+        <tr>
+            <th>
+                SL#
+            </th>
+            <th>
+                Payment Date
+            </th>
+            <th>
+                Receipt No.
+            </th>
+            <th>
+                Amount (BDT)
+            </th>
+            <th>
+                Due Amount (BDT)
+            </th>
+             <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            sub_total += item.Amount;
+
+            <tr>
+                <td>@i.</td>
+                <td>
+                    @item.PaymentDate.ToString("dd, MMM yyyy")
+                </td>
+                <td>
+                    @item.RecieptNo
+                </td>
+                <td>
+                    @item.Amount
+                </td>
+                <td>
+                    @(course_fee-sub_total)
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            i++;
+            
+        }
+    </tbody>
+</table>
+@section Scripts {
+<script>
+    $(document).ready(function () {
+        $("#emptable").DataTable({
+            layout: {
+                bottomStart: {
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
+    });
+</script>
+}

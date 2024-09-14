@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "AddRole";
+}
+
+<h3 class="alert alert-primary">Add Role </h3>
+
+<h5 id="msg" class="text-danger">@ViewBag.msg</h5>
+
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+        <form asp-action="AddRole" method="post">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-text"> Role Name </span>
+                    <input type="text" name="rname" class="form-control" />
+                    <button type="submit" class="btn btn-success btn-sm"> Save Role </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+
+<ul class="list-group">
+    @if (ViewBag.rolelist!=null){
+        foreach (var item in ViewBag.rolelist){
+            <li class="list-group-item">@item</li>
+        }
+    }
+    else{
+        <li class="list-group-item">No Role is found.</li>
+    }
+</ul>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('#msg').fadeOut(5000);
+
+
+        });
+    </script>
+}

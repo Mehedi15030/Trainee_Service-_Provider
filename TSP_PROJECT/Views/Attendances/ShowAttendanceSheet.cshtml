@@ -1,0 +1,69 @@
+﻿@model IEnumerable<TSP_PROJECT.Models.Attendance>
+
+@{
+    ViewData["Title"] = "Create";
+    int i = 1;
+}
+
+<h3 class="alert alert-primary">Show Attendance</h3>
+
+<table class=" table table-striped" >
+    <thead>
+        <tr>
+            <th>SL#</th>
+            <th>@Html.DisplayNameFor(model => model.Student)</th>
+            <th>@Html.DisplayNameFor(model => model.IsPresent)</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@i.</td>
+                <td>@Html.DisplayFor(modelItem => item.Student.StudentName)</td>
+                <td>
+                    <a id="@item.Id">Absent</a>
+                </td>
+                <td>
+                    <button type="button" onclick="handleAttendance('@item.Id')">Click</button>
+                </td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        function handleAttendance(elementId) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = "Present";
+        }
+    </script>
+}
+@*
+@section Scripts {
+<script>
+    $(document).ready(function () {
+        $("#emptable").DataTable({
+            layout: {
+                bottomStart: {
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
+    });
+</script>
+}*@
+
+@* <td>
+                   <form asp-action="MarkPresentOrAbsent" method="post">
+                        <input type="hidden" name="attId" value="@item.Id" />
+                        <button type="submit" class="btn btn-primary btn-sm">Present or Absent</button>
+                    </form>
+
+                    </td>*@
+
+

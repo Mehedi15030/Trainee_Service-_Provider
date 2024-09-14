@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TSP_PROJECT.Models.StudentBatch>
+
+@{
+    ViewData["Title"] = "Create";
+    int i = 1;
+}
+
+<h2>Student List </h2>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>
+                SL#
+            </th>
+            <th>
+                Student Name
+            </th>
+            <th>
+                Student Address
+            </th>
+            <th>
+                Mobile No
+            </th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@i.</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.StudentAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.MobileNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.Email)
+                </td>
+                <td>
+                    <a asp-action="ShowStudentPayments" asp-route-id="@item.Id" asp-route-bid="@item.BatchId">Show Student Payment</a> 
+ 
+                </td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>

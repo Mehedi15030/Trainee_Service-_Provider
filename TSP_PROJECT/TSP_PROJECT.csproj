@@ -1,0 +1,92 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-TSP_PROJECT-d83b4c12-3646-4245-abd2-5a547f5e5e3c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Views\Attendances\Create.cshtml" />
+    <None Include="Views\Attendances\Delete.cshtml" />
+    <None Include="Views\Attendances\Details.cshtml" />
+    <None Include="Views\Attendances\Edit.cshtml" />
+    <None Include="Views\Attendances\Index.cshtml" />
+    <None Include="Views\Batches\Create.cshtml" />
+    <None Include="Views\Batches\Delete.cshtml" />
+    <None Include="Views\Batches\Details.cshtml" />
+    <None Include="Views\Batches\Edit.cshtml" />
+    <None Include="Views\Batches\Index.cshtml" />
+    <None Include="Views\CourseContents\Create.cshtml" />
+    <None Include="Views\CourseContents\Delete.cshtml" />
+    <None Include="Views\CourseContents\Details.cshtml" />
+    <None Include="Views\CourseContents\Edit.cshtml" />
+    <None Include="Views\CourseContents\Index.cshtml" />
+    <None Include="Views\CourseCoordinators\Create.cshtml" />
+    <None Include="Views\CourseCoordinators\Delete.cshtml" />
+    <None Include="Views\CourseCoordinators\Details.cshtml" />
+    <None Include="Views\CourseCoordinators\Edit.cshtml" />
+    <None Include="Views\CourseCoordinators\Index.cshtml" />
+    <None Include="Views\Exams\Create.cshtml" />
+    <None Include="Views\Exams\Delete.cshtml" />
+    <None Include="Views\Exams\Details.cshtml" />
+    <None Include="Views\Exams\Edit.cshtml" />
+    <None Include="Views\Exams\Index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Labs\Create.cshtml" />
+    <None Include="Views\Labs\Delete.cshtml" />
+    <None Include="Views\Labs\Details.cshtml" />
+    <None Include="Views\Labs\Edit.cshtml" />
+    <None Include="Views\Labs\Index.cshtml" />
+    <None Include="Views\Payments\Create.cshtml" />
+    <None Include="Views\Payments\Delete.cshtml" />
+    <None Include="Views\Payments\Details.cshtml" />
+    <None Include="Views\Payments\Edit.cshtml" />
+    <None Include="Views\Payments\Index.cshtml" />
+    <None Include="Views\Results\Create.cshtml" />
+    <None Include="Views\Results\Delete.cshtml" />
+    <None Include="Views\Results\Details.cshtml" />
+    <None Include="Views\Results\Edit.cshtml" />
+    <None Include="Views\Results\Index.cshtml" />
+    <None Include="Views\Schedules\Create.cshtml" />
+    <None Include="Views\Schedules\Delete.cshtml" />
+    <None Include="Views\Schedules\Details.cshtml" />
+    <None Include="Views\Schedules\Edit.cshtml" />
+    <None Include="Views\Schedules\Index.cshtml" />
+    <None Include="Views\StudentBatches\Create.cshtml" />
+    <None Include="Views\StudentBatches\Delete.cshtml" />
+    <None Include="Views\StudentBatches\Details.cshtml" />
+    <None Include="Views\StudentBatches\Edit.cshtml" />
+    <None Include="Views\StudentBatches\Index.cshtml" />
+    <None Include="Views\Students\Create.cshtml" />
+    <None Include="Views\Students\Delete.cshtml" />
+    <None Include="Views\Students\Details.cshtml" />
+    <None Include="Views\Students\Edit.cshtml" />
+    <None Include="Views\Students\Index.cshtml" />
+    <None Include="Views\TrainerCourses\Create.cshtml" />
+    <None Include="Views\TrainerCourses\Delete.cshtml" />
+    <None Include="Views\TrainerCourses\Details.cshtml" />
+    <None Include="Views\TrainerCourses\Edit.cshtml" />
+    <None Include="Views\TrainerCourses\Index.cshtml" />
+    <None Include="Views\Trainers\Create.cshtml" />
+    <None Include="Views\Trainers\Delete.cshtml" />
+    <None Include="Views\Trainers\Details.cshtml" />
+    <None Include="Views\Trainers\Edit.cshtml" />
+    <None Include="Views\Trainers\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+  </ItemGroup>
+
+</Project>

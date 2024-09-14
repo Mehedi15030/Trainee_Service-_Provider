@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "Assign Role";
+}
+
+<h3 class="alert alert-primary">Assign Role To User </h3>
+
+<h5 id="msg" class="text-danger">@ViewBag.msg</h5>
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <form asp-action="AssignRole" method="post">
+            <div class="form-group">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-text"> User Name </span>
+                        <select name="useremail" class="form-control">
+                            @if (ViewBag.userlist != null)
+                            {
+                                foreach (var item in ViewBag.userlist)
+                                {
+                                    <option value="@item">@item</option>
+                                }
+                            }
+                        </select>
+
+                    </div>
+                </div>
+                <br />
+                <div class="input-group">
+                    <span class="input-group-text"> Role Name </span>
+                    <select name="userrole" class="form-control" >
+                        @if (ViewBag.rolelist != null)
+                        {
+                            foreach (var item in ViewBag.rolelist)
+                            {
+                                <option value="@item.Name">@item.Name</option>
+                            }
+                        }
+                    </select>
+                    
+                </div>
+                <br />
+                <button type="submit" class="btn btn-success btn-sm"> Assign Role </button>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+
+<ul class="list-group">
+    @if (ViewBag.rolelist != null)
+    {
+        foreach (var item in ViewBag.rolelist)
+        {
+            <li class="list-group-item">@item</li>
+        }
+    }
+    else
+    {
+        <li class="list-group-item">No Role is found.</li>
+    }
+</ul>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $('#msg').fadeOut(5000);
+
+
+        });
+    </script>
+}
